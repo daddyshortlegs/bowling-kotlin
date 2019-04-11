@@ -6,11 +6,10 @@ class Bowling {
     }
 
     fun convertInputToRolls(input: String): IntArray {
-        val strippedInput = input.replace(" ", "")
         val arrayList = ArrayList<Int>()
         var i = 0
         var previousChar = ' '
-        for (char in strippedInput) {
+        for (char in removeSpacesFrom(input)) {
             convertCharToRollValue(char, arrayList, previousChar)
             previousChar = char
             i++
@@ -18,6 +17,8 @@ class Bowling {
 
         return arrayList.toIntArray()
     }
+
+    private fun removeSpacesFrom(input: String) = input.replace(" ", "")
 
     private fun convertCharToRollValue(char: Char, arrayList: ArrayList<Int>, previousChar: Char) {
         if (char == 'X') {
