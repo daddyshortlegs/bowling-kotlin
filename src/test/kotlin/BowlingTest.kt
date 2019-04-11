@@ -41,4 +41,9 @@ class BowlingTest {
         assertEquals(20, bowling.score("2/ 5- -- -- -- -- -- -- -- --"))
     }
 
+    @Test
+    fun allSpares() {
+        assertEquals(150, bowling.score("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5"))
+    }
+
 }

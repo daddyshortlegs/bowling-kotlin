@@ -6,7 +6,7 @@ class Bowling {
         var score = 0
         var i = 0
         for (frames in 0 until 10) {
-            if (rolls[i] + rolls[i + 1] == 10) {
+            if (isSpare(rolls, i)) {
                 score += 10 + rolls[i + 2]
                 i++
             } else {
@@ -17,6 +17,8 @@ class Bowling {
 
         return score
     }
+
+    private fun isSpare(rolls: IntArray, i: Int) = rolls[i] + rolls[i + 1] == 10
 
 
     fun convertInputToRolls(input: String): IntArray {
