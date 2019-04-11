@@ -1,4 +1,5 @@
 import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
@@ -8,7 +9,7 @@ class BowlingTest {
 
     @Before
     fun setup() {
-        bowling = Bowling();
+        bowling = Bowling()
     }
 
     @Test
@@ -18,6 +19,16 @@ class BowlingTest {
         val actualRolls = bowling.convertInputToRolls("1- 5/ 33 X X 34 -1 33 24 22")
 
         assertArrayEquals(expectedRolls, actualRolls)
+    }
+
+    @Test
+    fun gutterBall() {
+        assertEquals(0, bowling.score("-- -- -- -- -- -- -- -- -- --"))
+    }
+
+    @Test
+    fun allOnes() {
+        assertEquals(10, bowling.score("1- 1- 1- 1- 1- 1- 1- 1- 1- 1-"))
     }
 
 }
