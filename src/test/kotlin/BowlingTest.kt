@@ -50,4 +50,9 @@ class BowlingTest {
     fun strike() {
         assertEquals(49, bowling.score("X X 52 -- -- -- -- -- -- --"))
     }
+
+    @Test
+    fun allStrikes() {
+        assertEquals(300, bowling.score("X X X X X X X X X X X X"))
+    }
 }
