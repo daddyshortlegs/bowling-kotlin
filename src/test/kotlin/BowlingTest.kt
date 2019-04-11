@@ -46,4 +46,8 @@ class BowlingTest {
         assertEquals(150, bowling.score("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5"))
     }
 
+    @Test
+    fun strike() {
+        assertEquals(49, bowling.score("X X 52 -- -- -- -- -- -- --"))
+    }
 }

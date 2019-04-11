@@ -9,6 +9,8 @@ class Bowling {
             if (isSpare(rolls, i)) {
                 score += 10 + rolls[i + 2]
                 i++
+            } else if (isStrike(rolls, i)) {
+                score += 10 + rolls[i + 1] + rolls[i + 2]
             } else {
                 score += rolls[i] + rolls[i + 2]
             }
@@ -20,6 +22,7 @@ class Bowling {
 
     private fun isSpare(rolls: IntArray, i: Int) = rolls[i] + rolls[i + 1] == 10
 
+    private fun isStrike(rolls: IntArray, i: Int) = rolls[i] == 10
 
     fun convertInputToRolls(input: String): IntArray {
         val strippedInput = input.replace(" ", "")
