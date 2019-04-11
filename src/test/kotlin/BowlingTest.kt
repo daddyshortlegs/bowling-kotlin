@@ -31,4 +31,14 @@ class BowlingTest {
         assertEquals(10, bowling.score("1- 1- 1- 1- 1- 1- 1- 1- 1- 1-"))
     }
 
+    @Test
+    fun twoRolls() {
+        assertEquals(4, bowling.score("22 -- -- -- -- -- -- -- -- --"))
+    }
+
+    @Test
+    fun spare() {
+        assertEquals(20, bowling.score("2/ 5- -- -- -- -- -- -- -- --"))
+    }
+
 }

@@ -4,8 +4,15 @@ class Bowling {
         val rolls = convertInputToRolls(s)
 
         var score = 0
-        for (roll in rolls) {
-            score += roll
+        var i = 0
+        for (frames in 0 until 10) {
+            if (rolls[i] + rolls[i + 1] == 10) {
+                score += 10 + rolls[i + 2]
+                i++
+            } else {
+                score += rolls[i] + rolls[i + 2]
+            }
+            i++
         }
 
         return score
